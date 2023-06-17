@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { ADDNEW_TODO } from './type';
 
-const API_URL = `http://localhost:8000`;
+const API_URL = 'http://localhost:8000';
 
 export const addNewTodo = (data) => async (dispatch) => {
     try {
