@@ -28,7 +28,7 @@ const TodoForm = () => {
                placeholder="Adicione uma nova tarefa"
                className="input"
                onChange={onInputChange}
-            
+               value={text}
             />
             </div>
             </form>

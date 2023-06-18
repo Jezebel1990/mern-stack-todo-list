@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.addNewTodo = void 0;
+exports.getAllTodos = exports.addNewTodo = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -50,3 +50,39 @@ var addNewTodo = function addNewTodo(data) {
 };
 
 exports.addNewTodo = addNewTodo;
+
+var getAllTodos = function getAllTodos() {
+  return function _callee2(dispatch) {
+    var res;
+    return regeneratorRuntime.async(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return regeneratorRuntime.awrap(_axios["default"].get("".concat(API_URL, "/todos")));
+
+          case 3:
+            res = _context2.sent;
+            dispatch({
+              type: _type.GETALL_TODO,
+              payload: res.data
+            });
+            _context2.next = 10;
+            break;
+
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](0);
+            console.log('Error while calling getAllTodos API ', _context2.t0.message);
+
+          case 10:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, null, null, [[0, 7]]);
+  };
+};
+
+exports.getAllTodos = getAllTodos;
