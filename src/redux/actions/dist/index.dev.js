@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getAllTodos = exports.addNewTodo = void 0;
+exports.updateTodo = exports.toggleTodo = exports.getAllTodos = exports.addNewTodo = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -86,3 +86,77 @@ var getAllTodos = function getAllTodos() {
 };
 
 exports.getAllTodos = getAllTodos;
+
+var toggleTodo = function toggleTodo(id) {
+  return function _callee3(dispatch) {
+    var res;
+    return regeneratorRuntime.async(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.prev = 0;
+            _context3.next = 3;
+            return regeneratorRuntime.awrap(_axios["default"].get("".concat(API_URL, "/todos/").concat(id)));
+
+          case 3:
+            res = _context3.sent;
+            dispatch({
+              type: _type.TOGGLE_TODO,
+              payload: res.data
+            });
+            _context3.next = 10;
+            break;
+
+          case 7:
+            _context3.prev = 7;
+            _context3.t0 = _context3["catch"](0);
+            console.log('Error while calling getAllTodos API ', _context3.t0.message);
+
+          case 10:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, null, null, [[0, 7]]);
+  };
+};
+
+exports.toggleTodo = toggleTodo;
+
+var updateTodo = function updateTodo(id, data) {
+  return function _callee4(dispatch) {
+    var res;
+    return regeneratorRuntime.async(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.prev = 0;
+            _context4.next = 3;
+            return regeneratorRuntime.awrap(_axios["default"].put("".concat(API_URL, "/todos/").concat(id), {
+              data: data
+            }));
+
+          case 3:
+            res = _context4.sent;
+            dispatch({
+              type: _type.UPDATE_TODO,
+              payload: res.data
+            });
+            _context4.next = 10;
+            break;
+
+          case 7:
+            _context4.prev = 7;
+            _context4.t0 = _context4["catch"](0);
+            console.log('Error while calling updateTodo API ', _context4.t0.message);
+
+          case 10:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, null, null, [[0, 7]]);
+  };
+};
+
+exports.updateTodo = updateTodo;
