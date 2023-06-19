@@ -52,6 +52,11 @@ var todosReducers = function todosReducers() {
         }) : todo;
       });
 
+    case actionTypes.DELETE_TODO:
+      return state.filter(function (todo) {
+        return todo._id !== action.payload._id;
+      });
+
     default:
       return state;
   }

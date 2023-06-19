@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateTodo = exports.toggleTodo = exports.getAllTodos = exports.addNewTodo = void 0;
+exports.deleteTodo = exports.updateTodo = exports.toggleTodo = exports.getAllTodos = exports.addNewTodo = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -160,3 +160,39 @@ var updateTodo = function updateTodo(id, data) {
 };
 
 exports.updateTodo = updateTodo;
+
+var deleteTodo = function deleteTodo(id) {
+  return function _callee5(dispatch) {
+    var res;
+    return regeneratorRuntime.async(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return regeneratorRuntime.awrap(_axios["default"]["delete"]("".concat(API_URL, "/todos/").concat(id)));
+
+          case 3:
+            res = _context5.sent;
+            dispatch({
+              type: _type.DELETE_TODO,
+              payload: res.data
+            });
+            _context5.next = 10;
+            break;
+
+          case 7:
+            _context5.prev = 7;
+            _context5.t0 = _context5["catch"](0);
+            console.log('Error while calling deleteTodo API ', _context5.t0.message);
+
+          case 10:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, null, null, [[0, 7]]);
+  };
+};
+
+exports.deleteTodo = deleteTodo;
