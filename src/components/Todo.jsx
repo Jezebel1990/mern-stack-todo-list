@@ -48,7 +48,7 @@ const Todo = ({ todo }) => {
 
 
             <span className="icon" onClick={() => dispatch(deleteTodo(todo._id))}
-            style={{ color: '#de4130'
+            style={{ color: '#ce2075'
         }}
             >
                 <i className="fas fa-trash"/>

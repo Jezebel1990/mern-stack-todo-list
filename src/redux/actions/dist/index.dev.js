@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deleteTodo = exports.updateTodo = exports.toggleTodo = exports.getAllTodos = exports.addNewTodo = void 0;
+exports.toggleTab = exports.deleteTodo = exports.updateTodo = exports.toggleTodo = exports.getAllTodos = exports.addNewTodo = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -196,3 +196,25 @@ var deleteTodo = function deleteTodo(id) {
 };
 
 exports.deleteTodo = deleteTodo;
+
+var toggleTab = function toggleTab(tab) {
+  return function _callee6(dispatch) {
+    return regeneratorRuntime.async(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            dispatch({
+              type: _type.TOGGLE_TAB,
+              selected: tab
+            });
+
+          case 1:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    });
+  };
+};
+
+exports.toggleTab = toggleTab;

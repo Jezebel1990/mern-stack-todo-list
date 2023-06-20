@@ -1,11 +1,13 @@
 body {
   margin: 0 auto;
+  
 
 }
 
 header {
   position: relative;
   text-align: center;
+  display: flex;
 }
 
 .header-image {
@@ -25,11 +27,11 @@ header {
 
 .input {
   font-size: 20px;
-  color: #2c3e50;
+  color: #883660;
   width: 50%;
   border: none;
   outline: none;
-  border-bottom: 1px solid #2c3e50;
+  border-bottom: 5px dotted #34022c;
   padding: 10px;
 }
 
@@ -77,4 +79,29 @@ header {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #FFFFFF;
+}
+
+.button {
+  margin: 0 90px;
+  padding: 10px;
+  font-size: 14px;
+  color: #34022c;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 160px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.button.selected {
+  color: #fff;
+  background-color: #f08038;
+}
+
+.button.clear {
+  float: right;
+  color: #fff;
+  background-color: #f34a37;
+  width: 170px;
 }
