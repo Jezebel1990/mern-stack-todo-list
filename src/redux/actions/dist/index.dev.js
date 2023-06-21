@@ -11,7 +11,7 @@ var _type = require("./type");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var API_URL = 'http://localhost:8000';
+var API_URL = 'https://server-todo-list-c16l.onrender.com';
 
 var addNewTodo = function addNewTodo(data) {
   return function _callee(dispatch) {
