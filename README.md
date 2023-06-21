@@ -4,6 +4,12 @@ Welcome, this project  is an Mern Stack task list with database.
 
 
 ##  👀 Preview
+![Captura de tela 2023-06-20 200418](https://github.com/Jezebel1990/mern-stack-todo-list/assets/75287031/5cc8f613-6996-43a5-876c-9b2fe208c8ca)
+![Captura de tela 2023-06-20 200653](https://github.com/Jezebel1990/mern-stack-todo-list/assets/75287031/80d42d52-62d0-4fdc-833a-6efbcbf08166)
+![Captura de tela 2023-06-20 201809](https://github.com/Jezebel1990/mern-stack-todo-list/assets/75287031/de43a4bd-6cf4-4ca7-a8d3-5800a483315b)
+![Captura de tela 2023-06-20 200555](https://github.com/Jezebel1990/mern-stack-todo-list/assets/75287031/b4a8d3fe-4e88-4166-9a2f-38bba502d3bd)
+
+
 
 ## ⚙️ Technologies
 - React;
